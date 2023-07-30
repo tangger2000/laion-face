@@ -34,21 +34,22 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          df -h
           
-      - name: Commit files
-        run: |
-          git config --local user.email "16505692+tangger2000@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git clone https://github.com/tangger2000/laion-face.git
-          cd laion-face
-          wget -l1 -r --no-parent https://the-eye.eu/public/AI/cah/laion400m-met-release/laion400m-meta/
-          mv the-eye.eu/public/AI/cah/laion400m-met-release/laion400m-meta/ .
-          wget https://huggingface.co/datasets/FacePerceiver/laion-face/resolve/main/laion_face_ids.pth
-          wget https://raw.githubusercontent.com/FacePerceiver/LAION-Face/master/convert_parquet.py
-          python convert_parquet.py ./laion_face_ids.pth ./laion400m-meta ./laion_face_meta
-          git commit -a -m "Add changes"
+#       - name: Commit files
+#         run: |
+#          git config --local user.email "16505692+tangger2000@users.noreply.github.com"
+#          git config --local user.name "github-actions[bot]"
+#          git clone https://github.com/tangger2000/laion-face.git
+#          cd laion-face
+#         wget -l1 -r --no-parent https://the-eye.eu/public/AI/cah/laion400m-met-release/laion400m-meta/
+#          mv the-eye.eu/public/AI/cah/laion400m-met-release/laion400m-meta/ .
+#          wget https://huggingface.co/datasets/FacePerceiver/laion-face/resolve/main/laion_face_ids.pth
+#          wget https://raw.githubusercontent.com/FacePerceiver/LAION-Face/master/convert_parquet.py
+#          python convert_parquet.py ./laion_face_ids.pth ./laion400m-meta ./laion_face_meta
+#          git commit -a -m "Add changes"
           
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+#       - name: Push changes
+#         uses: ad-m/github-push-action@master
+#         with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
