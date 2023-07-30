@@ -22,12 +22,16 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: workspace dir
+        uses: actions/checkout@v2
+        
       # pip
       - name: pip img2dataset
         run: pip install img2dataset
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      # mkdir && wget
+      - name: prepare meta data
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          pwd
+          mkdir laion_face_meta_work
+          ls
