@@ -39,7 +39,7 @@ jobs:
         run: |
           git config --local user.email "16505692+tangger2000@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git clone git@github.com:tangger2000/laion-face.git
+          git clone https://github.com/tangger2000/laion-face.git
           cd laion-face
           wget -l1 -r --no-parent https://the-eye.eu/public/AI/cah/laion400m-met-release/laion400m-meta/
           mv the-eye.eu/public/AI/cah/laion400m-met-release/laion400m-meta/ .
